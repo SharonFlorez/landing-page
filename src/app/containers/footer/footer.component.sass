@@ -1,0 +1,93 @@
+@import 'src/app/core/sass/index'
+
+.footer-container
+  border-top: 0.2rem solid $light-gray
+  background-color: $dark-gray
+  color: $white
+
+  .site-map-container
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+    .text-title
+      max-width: 12rem
+      text-align: end
+
+    .side-map-part
+      flex: 0 0 40%
+
+      .text-subtitle
+        font-size: 1.5rem
+        font-weight: bold
+
+      ul
+        padding: 0
+
+  .logos-container
+    display: none
+    width: 100%
+
+  .copyrigth-container
+    flex-direction: column
+    border-top: 0.2rem solid $light-gray
+
+    .text-copyrigth
+      flex: 0 0 50%
+      margin: 0
+
+    .text-copyrigth:nth-last-child(-n+2)
+        flex: 0 0 100%
+
+    .uil
+      font-size: 2.5rem
+
+@include tablet
+  .footer-container
+    .site-map-container
+      flex-direction: row
+      align-items: baseline
+      flex-wrap: wrap
+
+      .side-map-parts
+        width: 75%
+        margin-left: 5rem
+
+        .side-map-part
+          flex: none
+
+        .side-map-part:last-child
+          margin-left: 10rem
+
+    .logos-container
+      display: flex
+      justify-content: space-between
+      width: 100%
+
+      .text-logo
+        font-family: 'Comic Neue', cursive
+        font-size: 4rem
+
+@include desktop
+  .footer-container
+    .site-map-container
+      .side-map-parts
+        width: 87%
+
+      .logos-container
+        width: 98%
+
+    .copyrigth-container
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+
+      .text-copyrigth:not(:first-child)
+        border-left: 0.1rem solid $white
+
+      .text-copyrigth:not(:last-child)
+        flex: 0 0 33%
+
+      .text-copyrigth:last-child
+        flex: 0 0 45%
+        margin: auto

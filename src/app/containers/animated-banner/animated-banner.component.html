@@ -1,0 +1,20 @@
+<div class="d-flex banner-container">
+  <div
+    class="d-flex card-container"
+    *ngFor="let card of cardContents"
+    (mouseenter)="toggleImage(card.image)"
+    (mouseleave)="toggleImage(defaultImage)"
+  >
+    <h1 class="text-card">{{ card.title }}</h1>
+    <span class="material-symbols-rounded icon">arrow_forward</span>
+    <p class="subtitle">{{ card.description }}</p>
+  </div>
+  <div [class]="isDefaultImage ? 'card-container' : 'image-container'">
+    <img
+      class="img-fluid fade-in"
+      [class]="isDefaultImage ? 'animation' : 'image'"
+      [src]="currentImage"
+      alt="image"
+    />
+  </div>
+</div>

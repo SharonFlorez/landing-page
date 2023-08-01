@@ -1,0 +1,11 @@
+$tablet-width: 768px
+$desktop-min-width: 1440px
+$desktop-max-width: 1920px
+
+@mixin tablet
+  @media (min-width: #{$tablet-width})
+    @content
+
+@mixin desktop
+  @media (#{$desktop-min-width} <= width <= #{$desktop-max-width})
+    @content

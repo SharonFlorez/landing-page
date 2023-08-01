@@ -1,0 +1,66 @@
+@import 'src/app/core/sass/index'
+
+.header-container
+  background-color: $black
+  position: fixed
+  z-index: 1
+  width: 100%
+
+  .text-logo
+    font-family: 'Comic Neue', cursive
+    color: $white
+    font-size: 3rem
+
+  .navigation-menu-mobile
+    display: flex
+    gap: 0.5rem
+
+    .icon
+      color: $white
+      font-size: 3rem
+
+  .navigation-menu-desktop
+    display: none
+
+.menu-container
+  background-color: $black
+  position: fixed
+  z-index: 1
+  top: 6rem
+  width: 100%
+  height: 100%
+  color: $white
+  font-size: 1.5rem
+  padding: 1rem
+
+  .burger-menu
+    color: $white
+    font-size: 1.5rem
+    padding: 1rem
+
+@include tablet
+  .header-container .text-logo,
+  .header-container .icon
+    font-size: 4rem
+
+@include desktop
+  .header-container
+    background-color: transparent
+    position: absolute
+    gap: 5rem
+
+    .navigation-menu-mobile
+      display: none
+
+    .navigation-menu-desktop
+      display: flex
+      align-items: center
+      gap: 3rem
+      color: $white
+      font-size: 2rem
+
+    .text-logo
+      font-size: 6rem
+
+    .tex-menu
+      width: 8rem

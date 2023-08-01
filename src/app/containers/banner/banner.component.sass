@@ -1,0 +1,63 @@
+@import 'src/app/core/sass/index'
+
+.background-banner
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  background-image: url('https://images.unsplash.com/photo-1612627838618-3e11bc23cf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80')
+  background-size: cover
+  height: 40rem
+
+  .text-contact
+    color: $white
+    font-size: 4rem
+    opacity: 0.7
+
+.texts-container
+  padding: 10rem 2rem 3rem
+
+  .text-title, .text-subtitle
+    font-size: 2.5rem
+    line-height: 3rem
+    color: $black
+
+  .text-title
+    font-weight: bold
+    margin-bottom: 4rem
+
+  .text-subtitle
+    font-size: 2rem
+    border-left: solid 0.2rem $black
+    padding-left: 3rem
+
+@include tablet
+  .background-banner
+    height: 80rem
+
+    .text-contact
+      font-size: 13rem
+
+  .texts-container
+    display: flex
+    padding: 10rem
+
+    .text-title
+      margin: 0
+      flex: 0 0 30%
+
+@include desktop
+  .background-banner
+    position: relative
+
+    .text-contact
+      font-size: 24rem
+      position: absolute
+      top: 65rem
+      left: 7rem
+
+  .texts-container
+    .text-title
+      font-size: 3rem
+
+    .text-subtitle
+      font-size: 2.5rem

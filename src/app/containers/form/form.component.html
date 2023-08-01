@@ -1,0 +1,116 @@
+<form class="form-text bg-black" [formGroup]="userForm">
+  <section class="form-section">
+    <mat-form-field appearance="fill" class="input-container">
+      <mat-label class="label-text">Nombre y apellidos *</mat-label>
+      <input
+        matInput
+        formControlName="fullName"
+        maxlength="25"
+        minlength="1"
+        type="text"
+        class="input"
+        required
+      />
+      {{ userForm.value.fullName.invalid }}
+      <p
+        *ngIf="
+          userForm.get('fullName')?.invalid && userForm.get('fullName')?.touched
+        "
+        class="error-message mt-2"
+      >
+        El campo es obligatorio.
+      </p>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="input-container">
+      <mat-label class="label-text">Email *</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        class="input"
+        type="email"
+        required
+      />
+      <p
+        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
+        class="error-message mt-2"
+      >
+        El campo es obligatorio.
+      </p>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="input-container">
+      <mat-label class="label-text">Empresa/Organismo *</mat-label>
+      <input
+        matInput
+        formControlName="company"
+        minlength="1"
+        type="text"
+        class="input"
+        required
+      />
+      <p
+        *ngIf="
+          userForm.get('company')?.invalid && userForm.get('company')?.touched
+        "
+        class="error-message mt-2"
+      >
+        El campo es obligatorio.
+      </p>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="input-container">
+      <mat-label class="label-text">País</mat-label>
+      <input
+        matInput
+        formControlName="country"
+        minlength="1"
+        type="text"
+        class="input"
+      />
+    </mat-form-field>
+  </section>
+
+  <section class="form-section">
+    <mat-form-field appearance="fill" class="input-container">
+      <mat-label class="label-text">Teléfono</mat-label>
+      <input
+        matInput
+        formControlName="phone"
+        minlength="1"
+        type="number"
+        class="input"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="input-container">
+      <label class="label-text">Mensaje: *</label>
+      <textarea
+        matInput
+        formControlName="message"
+        class="message-editor"
+        required
+      ></textarea>
+      <p
+        *ngIf="
+          userForm.get('message')?.invalid && userForm.get('message')?.touched
+        "
+        class="error-message mt-2"
+      >
+        El campo es obligatorio.
+      </p>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button class="button">Enviar</button>
+    </div>
+
+    <p
+      *ngIf="userForm.invalid && userForm.touched"
+      class="global-error-message mt-2"
+    >
+      Uno o más campos tienen un error. Por favor, revísalos e inténtalo de
+      nuevo.
+    </p>
+  </section>
+</form>

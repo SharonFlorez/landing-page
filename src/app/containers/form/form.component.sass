@@ -1,0 +1,75 @@
+@import 'src/app/core/sass/index'
+
+.form-text
+  padding: 3rem
+
+  .input-container, .input, .message-editor
+    width: 100%
+
+    .input
+      background-color: transparent
+      color: $white
+      border: none
+      border-bottom: 0.2rem solid $light-gray
+      font-size: 2rem
+
+      ::placeholder
+        color: $white
+
+    .error-message
+      font-size: 1.2rem
+      color: $red
+
+    .label-text
+      font-size: 2rem
+      color: $white
+      margin-bottom: 2rem
+
+    .message-editor
+      background-color: transparent
+      border: 0.2rem solid $light-gray
+      border-radius: $border-radius
+      color: $white
+      font-size: 2rem
+
+  .button-container
+    display: flex
+    justify-content: flex-end
+    margin-bottom: 3rem
+
+    .button
+      background-color: transparent
+      color: $white
+      border: 0.2rem solid $white
+      width: 10rem
+      height: 10rem
+      border-radius: 6rem
+      font-size: 2rem
+
+  .global-error-message
+    font-size: 1rem
+    color: $light-gray
+
+@include tablet
+  .form-text
+    padding: 10rem
+
+@include desktop
+  .form-text
+    display: flex
+    justify-content: flex-start
+    padding: 10rem 30rem 10rem 15rem
+    gap: 1rem
+
+    .form-section
+      flex: 0 0 50%
+
+
+    .input-container, .input, .message-editor
+      width: 80%
+
+    .button-container
+      justify-content: space-around
+
+    .global-error-message
+      font-size: 1.2rem

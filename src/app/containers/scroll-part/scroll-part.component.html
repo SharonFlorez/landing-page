@@ -1,0 +1,9 @@
+<div class="background-container">
+  <div class="background-text">WORK</div>
+  <div class="content">
+    <div class="element" *ngFor="let card of cardContents">
+      <img class="image-card" [src]="card.image" alt="" />
+      <h1 class="text-card">{{ card.title }}</h1>
+    </div>
+  </div>
+</div>

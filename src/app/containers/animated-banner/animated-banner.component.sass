@@ -1,0 +1,103 @@
+@import 'src/app/core/sass/index'
+
+.banner-container
+  flex-direction: column
+  height: auto
+  background-color: $black
+  color: $white
+
+  .card-container
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: 3rem 5rem
+    border-bottom: 0.1rem solid $light-gray
+    border-top: 0.1rem solid $light-gray
+
+    .text-card
+      font-size: 2.5rem
+
+    .icon
+      font-size: 2rem
+      border: 0.1rem solid $white
+      border-radius: 3rem
+      margin-right: 0.5rem
+
+    .subtitle
+      color: $light-gray
+      width: 100%
+      margin: 0
+
+  .card-container:last-child, .image-container
+    border-top: none
+    display: none
+
+
+@include desktop
+  .banner-container
+    flex-direction: row
+    border-top: 0.1rem solid $light-gray
+    height: 50rem
+
+    .card-container
+      flex: 0 0 25%
+      padding: 0 2rem
+      cursor: pointer
+      border-bottom: none
+
+      .text-card
+        font-size: 5rem
+
+      .icon
+        font-size: 3rem
+        border: 0.1rem solid $white
+        border-radius: 3rem
+
+      .subtitle
+        display: none
+
+    .card-container:not(:last-child)
+      border-right: 0.1rem solid $light-gray
+
+    .card-container:last-child
+      display: flex
+      width: 15rem
+      height: 15rem
+      margin: auto
+
+    .card-container:hover:not(:last-child)
+      background-color: $white
+      color: $black
+
+    .card-container:hover .icon
+      border: 0.1rem solid $black
+      background-color: $black
+      color: $white
+      transform: rotate(-40deg)
+      transition: transform 0.3s ease
+
+    .image-container, .image
+      display: flex
+      height: 100%
+      width: 100%
+
+    .image-container .fade-in
+      animation: fadeInAnimation 1s ease-in
+
+    @keyframes fadeInAnimation
+      from
+        opacity: 0
+      to
+        opacity: 1
+
+    .animation
+      width: 15rem
+      animation: rotate 30s linear infinite
+      margin-left: 11rem
+
+    @keyframes rotate
+      from
+        transform: rotate(0deg)
+
+      to
+        transform: rotate(360deg)
