@@ -4,6 +4,6 @@ Landing page created from Angular and TypeScript, implementing Bootstrap for som
 
 ## Installation
 
-Clone the repository: https://github.com/SharonFlorez/landing-page.git
-Install dependencies: npm install
-Run the project: npm start
+- Clone the repository: https://github.com/SharonFlorez/landing-page.git
+- Install dependencies: npm install
+- Run the project: npm start
